@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Vault & Video Masterclass | Stop Getting Generic Outputs</title>
+<meta name="description" content="10,000+ copy-paste AI prompts plus a 4-module faceless video masterclass. One-time ₹299. Lifetime access.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ============ RESET & BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background-color: #08090C;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  h1, h2, h3, p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: rgba(16,185,129,0.35); color: #fff; }
+
+  /* ============ LAYOUT HELPERS ============ */
+  .wrap { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  .wrap-md { max-width: 896px; margin: 0 auto; padding: 0 24px; }
+  .wrap-sm { max-width: 768px; margin: 0 auto; padding: 0 24px; }
+  .wrap-xs { max-width: 672px; margin: 0 auto; padding: 0 24px; }
+
+  .section { padding: 96px 24px; border-top: 1px solid #1F2633; }
+  .section-alt { background: #0B0D12; }
+  .intro { max-width: 640px; margin-bottom: 56px; }
+  .intro h2 { font-size: 2.1rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .intro p { color: #94A3B8; font-size: 1.1rem; line-height: 1.65; }
+
+  .center { text-align: center; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+
+  /* ============ TOP TICKER ============ */
+  .ticker-bar {
+    position: sticky; top: 0; z-index: 50;
+    background: #0B0D12;
+    border-bottom: 1px solid #1F2633;
+    overflow: hidden;
+  }
+  .ticker-inner { display: flex; align-items: center; gap: 12px; padding: 8px 16px; }
+  .ticker-dot {
+    flex-shrink: 0;
+    width: 8px; height: 8px; border-radius: 999px;
+    background: #10B981;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .ticker-viewport { overflow: hidden; width: 100%; }
+  .ticker-track {
+    display: flex; gap: 64px; white-space: nowrap;
+    font-size: 0.9rem; font-weight: 500;
+    animation: ticker 22s linear infinite;
+    width: max-content;
+  }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    padding: 64px 24px 96px;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(16,185,129,0.09), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(34,211,238,0.07), transparent 35%),
+      radial-gradient(circle at 50% 90%, rgba(99,102,241,0.07), transparent 45%);
+  }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px;
+    border: 1px solid #1F2633; background: rgba(255,255,255,0.03);
+    font-size: 0.9rem; color: #94A3B8; margin-bottom: 28px;
+  }
+  .pill i { color: #10B981; }
+  .h1 {
+    font-size: 2.4rem; font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.02em; margin-bottom: 22px;
+  }
+  .lead {
+    font-size: 1.1rem; color: #94A3B8; max-width: 620px;
+    margin: 0 auto 36px; line-height: 1.65;
+  }
+  .tool-pills { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-bottom: 36px; }
+  .tool-pill {
+    padding: 8px 16px; border-radius: 999px;
+    border: 1px solid #1F2633; background: rgba(255,255,255,0.02);
+    font-size: 0.85rem; color: #94A3B8;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  .tool-pill:hover { border-color: rgba(34,211,238,0.5); background: rgba(34,211,238,0.06); }
+
+  .pay-note { margin-top: 22px; font-size: 0.9rem; color: #94A3B8; }
+
+  /* ============ BUTTONS ============ */
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(135deg, #10B981 0%, #0D9668 100%);
+    color: #04140D; font-weight: 700; font-size: 1.05rem;
+    padding: 16px 40px; border-radius: 14px; border: none;
+    box-shadow: 0 0 25px rgba(16,185,129,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.015); box-shadow: 0 0 45px rgba(16,185,129,0.5); }
+  .btn-primary:active { transform: translateY(0) scale(0.99); }
+  .btn-primary:focus-visible { outline: 2px solid #10B981; outline-offset: 3px; }
+
+  /* ============ GLASS CARDS ============ */
+  .glass-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%), #0F1218;
+    border: 1px solid #1F2633;
+    border-radius: 18px;
+    padding: 28px;
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(16,185,129,0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(16,185,129,0.15);
+  }
+
+  /* ============ BENTO GRID ============ */
+  .grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .icon-tile {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 1.25rem;
+  }
+  .icon-tile.emerald { background: rgba(16,185,129,0.1); color: #10B981; }
+  .icon-tile.cyan { background: rgba(34,211,238,0.1); color: #22D3EE; }
+  .icon-tile.indigo { background: rgba(129,140,248,0.1); color: #818CF8; }
+
+  .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .card-text { color: #94A3B8; line-height: 1.65; }
+
+  /* ============ TIMELINE ============ */
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline-line {
+    position: absolute; left: 15px; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(180deg, rgba(16,185,129,0.5), rgba(16,185,129,0.05));
+  }
+  .timeline-item { position: relative; margin-bottom: 48px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-num {
+    position: absolute; left: -40px; top: 0;
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #0F1218; border: 2px solid #10B981;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 700;
+  }
+  .timeline-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #10B981; margin-bottom: 6px; }
+  .timeline-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+
+  /* ============ TABLE ============ */
+  .table-wrap { overflow: hidden; border-radius: 18px; border: 1px solid #1F2633; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; text-align: left; min-width: 560px; }
+  thead tr { background: rgba(255,255,255,0.02); }
+  th { padding: 18px 20px; color: #94A3B8; font-weight: 600; font-size: 0.9rem; }
+  th.vault-head { color: #10B981; }
+  td { padding: 18px 20px; border-top: 1px solid #1F2633; }
+  td.label { font-weight: 600; }
+  td.dim { color: #94A3B8; }
+  td.vault { font-weight: 700; background: rgba(16,185,129,0.05); }
+
+  /* ============ REVIEWS ============ */
+  .stars { display: flex; align-items: center; gap: 3px; color: #FBBF24; margin-bottom: 16px; font-size: 0.9rem; }
+  .review-text { color: #94A3B8; line-height: 1.65; margin-bottom: 22px; }
+  .review-person { display: flex; align-items: center; gap: 12px; }
+  .avatar {
+    width: 40px; height: 40px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+  }
+  .avatar.emerald { background: rgba(16,185,129,0.2); color: #10B981; }
+  .avatar.cyan { background: rgba(34,211,238,0.2); color: #22D3EE; }
+  .avatar.indigo { background: rgba(129,140,248,0.2); color: #818CF8; }
+  .person-name { font-weight: 600; font-size: 0.9rem; }
+  .person-role { font-size: 0.8rem; color: #94A3B8; }
+
+  /* ============ FAQ ============ */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item { border-radius: 18px; overflow: hidden; }
+  .faq-toggle {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    background: none; border: none; text-align: left; padding: 22px 24px;
+    color: #fff; font-size: 1rem; font-weight: 600;
+  }
+  .faq-toggle:focus-visible { outline: 2px solid #10B981; outline-offset: -2px; }
+  .faq-icon {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 999px;
+    border: 1px solid #1F2633; display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; transition: transform 0.3s ease;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 24px; }
+  .faq-item.open .faq-answer { max-height: 400px; }
+  .faq-answer p { color: #94A3B8; line-height: 1.65; padding-bottom: 22px; }
+
+  /* ============ CHECKOUT BOX ============ */
+  .urgency-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border-radius: 999px;
+    border: 1px solid rgba(239,68,68,0.3); background: rgba(239,68,68,0.1);
+    color: #F87171; font-size: 0.9rem; margin-bottom: 28px;
+  }
+  .checkout-card { padding: 40px 28px; text-align: center; }
+  @media (min-width: 640px) { .checkout-card { padding: 48px; } }
+  .checkout-title { font-size: 1.9rem; font-weight: 800; margin-bottom: 24px; }
+
+  .countdown { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px; }
+  .cd-unit { text-align: center; }
+  .cd-num { font-size: 1.8rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .cd-label { font-size: 0.7rem; color: #94A3B8; text-transform: uppercase; margin-top: 4px; }
+  .cd-sep { font-size: 1.8rem; font-weight: 800; color: #10B981; }
+
+  .price-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px; }
+  .price-old { font-size: 1.4rem; color: #94A3B8; position: relative; }
+  .price-old::after {
+    content: ''; position: absolute; left: -4px; right: -4px; top: 52%;
+    height: 2px; background: #F87171; transform: rotate(-4deg);
+  }
+  .price-new { font-size: 2.6rem; font-weight: 800; color: #10B981; }
+
+  .trust-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; font-size: 0.9rem; color: #94A3B8; }
+  .trust-row span { display: flex; align-items: center; gap: 8px; }
+  .trust-row i { color: #10B981; }
+
+  /* ============ STICKY MOBILE BAR ============ */
+  .mobile-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(11,13,18,0.97);
+    border-top: 1px solid #1F2633;
+    padding: 12px 16px;
+    display: none;
+  }
+  .mobile-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .mobile-price-old { font-size: 0.75rem; color: #94A3B8; position: relative; display: inline-block; }
+  .mobile-price-old::after {
+    content: ''; position: absolute; left: -3px; right: -3px; top: 52%;
+    height: 1.5px; background: #F87171; transform: rotate(-4deg);
+  }
+  .mobile-price-new { font-size: 1.15rem; font-weight: 800; color: #10B981; line-height: 1.2; }
+  .mobile-buy-btn {
+    flex: 1; max-width: 190px; text-align: center;
+    padding: 12px 20px; font-size: 0.9rem;
+  }
+  @media (max-width: 767px) { .mobile-bar { display: block; } }
+
+  /* ============ FOOTER ============ */
+  footer { padding: 48px 24px 96px; border-top: 1px solid #1F2633; }
+  @media (min-width: 768px) { footer { padding-bottom: 48px; } }
+  .footer-row {
+    max-width: 1152px; margin: 0 auto; display: flex; flex-direction: column;
+    align-items: center; justify-content: space-between; gap: 24px;
+    font-size: 0.9rem; color: #94A3B8; text-align: center;
+  }
+  @media (min-width: 768px) { .footer-row { flex-direction: row; text-align: left; } }
+  .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; }
+  .footer-links a { transition: color 0.2s ease; }
+  .footer-links a:hover { color: #fff; }
+  .footer-disclaimer {
+    max-width: 1152px; margin: 24px auto 0; font-size: 0.78rem;
+    color: rgba(148,163,184,0.7); line-height: 1.65;
+  }
+
+  /* ============ TYPE SCALE (section headings reuse .intro) ============ */
+  @media (min-width: 640px) {
+    .h1 { font-size: 3.1rem; }
+    .intro h2 { font-size: 2.4rem; }
+    .checkout-title { font-size: 2.2rem; }
+  }
+  @media (min-width: 768px) {
+    .h1 { font-size: 3.6rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; }
+    * { transition: none !important; animation-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ================= TOP TICKER ================= -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span class="ticker-dot"></span>
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span>🔥 FLASH LAUNCH: 85% OFF ENDS TONIGHT — Instant Drive Access Included!</span>
+        <span>🔥 FLASH LAUNCH: 85% OFF ENDS TONIGHT — Instant Drive Access Included!</span>
+        <span>🔥 FLASH LAUNCH: 85% OFF ENDS TONIGHT — Instant Drive Access Included!</span>
+        <span>🔥 FLASH LAUNCH: 85% OFF ENDS TONIGHT — Instant Drive Access Included!</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+  <div class="wrap center">
+
+    <span class="pill"><i class="fa-solid fa-bolt"></i> India's #1 AI Content &amp; Prompt Engineering Vault</span>
+
+    <h1 class="h1">
+      Stop Getting Generic Outputs From ChatGPT.<br>
+      Build Studio-Quality Content in Minutes.
+    </h1>
+
+    <p class="lead">
+      Get 10,000+ copy-paste prompts built for real workflows, plus a complete 4-module Faceless Video &amp; Prompt Masterclass — everything you need to go from blank page to published content, without the trial and error.
+    </p>
+
+    <div class="tool-pills">
+      <span class="tool-pill">ChatGPT</span>
+      <span class="tool-pill">Midjourney</span>
+      <span class="tool-pill">Claude</span>
+      <span class="tool-pill">Gemini</span>
+      <span class="tool-pill">DeepSeek</span>
+      <span class="tool-pill">Sora</span>
+      <span class="tool-pill">Runway</span>
+      <span class="tool-pill">Kling</span>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- >>> PUT YOUR PAYMENT / CHECKOUT LINK HERE <<< -->
+    <!-- ============================================== -->
+    <a href="https://your-payment-link-here.com" class="btn-primary">
+      Get Instant Access — ₹299
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+    <p class="pay-note">One-Time ₹299 &nbsp;•&nbsp; Lifetime Access &nbsp;•&nbsp; Instant Download &nbsp;•&nbsp; UPI Accepted</p>
+  </div>
+</section>
+
+<!-- ================= 6-MODULE BENTO GRID ================= -->
+<section id="vault" class="section">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Everything inside the vault</h2>
+      <p>Six categories of ready-to-use prompt libraries, built from real campaigns and channels, not generic templates pulled from a blog post.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="glass-card">
+        <div class="icon-tile emerald"><i class="fa-solid fa-clapperboard"></i></div>
+        <h3 class="card-title">Viral Reels &amp; Shorts Frameworks</h3>
+        <p class="card-text">Hook libraries, pacing scripts, and scene-by-scene structures used by creators pulling millions of views on Reels, Shorts, and TikTok.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-tile cyan"><i class="fa-solid fa-user-secret"></i></div>
+        <h3 class="card-title">Faceless Channel Blueprints</h3>
+        <p class="card-text">Dark psychology narratives, fact-drop scripts, and motivational templates ready to run through your voice engine of choice.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-tile indigo"><i class="fa-solid fa-bag-shopping"></i></div>
+        <h3 class="card-title">E-Commerce &amp; High-Converting Ads</h3>
+        <p class="card-text">Angle generation frameworks and sales scripts built to turn product pages into ad creative that actually converts.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-tile emerald"><i class="fa-solid fa-image"></i></div>
+        <h3 class="card-title">Midjourney &amp; Photorealistic Visual Prompts</h3>
+        <p class="card-text">Camera lens formulas, lighting setups, and 3D art recipes that produce consistent, photorealistic output every time.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-tile cyan"><i class="fa-solid fa-diagram-project"></i></div>
+        <h3 class="card-title">Automation Pipelines</h3>
+        <p class="card-text">Ready-made Make.com and Zapier workflows for auto-posting, content repurposing, and hands-off publishing schedules.</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="icon-tile indigo"><i class="fa-solid fa-pen-nib"></i></div>
+        <h3 class="card-title">Persuasive Copywriting</h3>
+        <p class="card-text">Full VSL scripts, landing page copy frameworks, and cold outreach templates that carry your offer from cold to close.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4-STEP VIDEO MASTERCLASS ================= -->
+<section id="masterclass" class="section section-alt">
+  <div class="wrap-md">
+    <div class="intro" style="margin-bottom: 64px;">
+      <h2>The bundled video masterclass</h2>
+      <p>Four modules that walk you from prompt logic to a paying client, in order.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-num">1</div>
+        <div class="glass-card">
+          <p class="timeline-eyebrow">Module 1</p>
+          <h3 class="timeline-title">Prompt Engineering Foundations &amp; Logic</h3>
+          <p class="card-text">How large language models actually interpret instructions, and the structural logic behind a prompt that consistently works instead of one that gets lucky.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-num">2</div>
+        <div class="glass-card">
+          <p class="timeline-eyebrow">Module 2</p>
+          <h3 class="timeline-title">Generating Hyper-Realistic Visuals</h3>
+          <p class="card-text">Camera, lighting, and composition control inside Midjourney and image models so your output looks shot, not generated.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-num">3</div>
+        <div class="glass-card">
+          <p class="timeline-eyebrow">Module 3</p>
+          <h3 class="timeline-title">Faceless Video Editing, Lip-Sync &amp; Motion Directing</h3>
+          <p class="card-text">Assembling faceless content end to end — pacing, lip-sync alignment, and motion direction that keeps viewers watching.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-num">4</div>
+        <div class="glass-card">
+          <p class="timeline-eyebrow">Module 4</p>
+          <h3 class="timeline-title">Monetization &amp; Client Acquisition Playbook</h3>
+          <p class="card-text">Turning the skill into income — pricing your services, pitching clients, and packaging your output into a sellable offer.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE ANCHORING TABLE ================= -->
+<section class="section">
+  <div class="wrap-md">
+    <div class="intro center mx-auto">
+      <h2>Doing it alone vs. the vault</h2>
+      <p>The same outcome, without months of trial and error.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>What you're comparing</th>
+            <th>Doing it alone</th>
+            <th class="vault-head">This Complete Vault</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">Cost</td>
+            <td class="dim">₹15,000+ across tools, courses, and freelancers</td>
+            <td class="vault">Flat ₹299 one-time</td>
+          </tr>
+          <tr>
+            <td class="label">Time investment</td>
+            <td class="dim">100+ hours of trial, error, and rewriting prompts</td>
+            <td class="vault">Ready to use in minutes</td>
+          </tr>
+          <tr>
+            <td class="label">Prompt quality</td>
+            <td class="dim">Inconsistent, generic outputs</td>
+            <td class="vault">10,000+ tested, categorized prompts</td>
+          </tr>
+          <tr>
+            <td class="label">Video training</td>
+            <td class="dim">Scattered free tutorials, no structure</td>
+            <td class="vault">Structured 4-module masterclass included</td>
+          </tr>
+          <tr>
+            <td class="label">Access</td>
+            <td class="dim">Subscriptions that expire</td>
+            <td class="vault">Lifetime access, one payment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS / SOCIAL PROOF ================= -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Creators already using the vault</h2>
+      <p>Real workflows, real time saved.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="glass-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"I used to spend almost an entire day scripting one faceless video. With the prompt sets in Module 2 and 3, I cut that down to under 90 minutes, start to finish."</p>
+        <div class="review-person">
+          <div class="avatar emerald">RK</div>
+          <div>
+            <p class="person-name">Rohit Kadam</p>
+            <p class="person-role">Faceless YouTube Creator, Pune</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"The e-commerce ad angle prompts alone paid for this ten times over. I generated four fresh ad concepts for a client in one afternoon instead of chasing a copywriter for a week."</p>
+        <div class="review-person">
+          <div class="avatar cyan">PS</div>
+          <div>
+            <p class="person-name">Priya Sharma</p>
+            <p class="person-role">Freelance Ad Strategist, Ahmedabad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Midjourney prompts here are genuinely different — the lighting and lens formulas got my product shots looking photorealistic on the first or second try, not the twentieth."</p>
+        <div class="review-person">
+          <div class="avatar indigo">AV</div>
+          <div>
+            <p class="person-name">Arjun Verma</p>
+            <p class="person-role">Product Photographer, Bengaluru</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ACCORDION ================= -->
+<section class="section">
+  <div class="wrap-sm">
+    <div class="intro" style="max-width: 560px;">
+      <h2>Questions before you get access</h2>
+      <p>The most common things people ask before joining.</p>
+    </div>
+
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item glass-card" style="padding: 0;">
+        <button class="faq-toggle" aria-expanded="false">
+          <span>How is it delivered?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Right after checkout, you'll get an instant link to a shared Google Drive folder containing every prompt file and the full video masterclass. No waiting, no manual approval.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card" style="padding: 0;">
+        <button class="faq-toggle" aria-expanded="false">
+          <span>Can beginners use it?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. The prompts are copy-paste ready with no prior prompting experience needed, and Module 1 of the masterclass covers the foundations before anything gets advanced.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card" style="padding: 0;">
+        <button class="faq-toggle" aria-expanded="false">
+          <span>Do I get commercial rights?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Every prompt and framework can be used in client work, your own channels, and commercial projects. Reselling or redistributing the vault itself as your own product is not permitted.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card" style="padding: 0;">
+        <button class="faq-toggle" aria-expanded="false">
+          <span>Which AI tools are supported?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The vault is built around ChatGPT, Claude, Gemini, and DeepSeek for text, and Midjourney, Sora, Runway, and Kling for visuals and video — prompts are labeled by tool so you always know where each one fits.</p>
+        </div>
+      </div>
+
+      <div class="faq-item glass-card" style="padding: 0;">
+        <button class="faq-toggle" aria-expanded="false">
+          <span>How does lifetime access work?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>You pay once and keep access to the Drive folder permanently, including future prompt additions and updates to the masterclass, at no extra cost.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CONVERSION & URGENCY ================= -->
+<section id="checkout" class="section section-alt">
+  <div class="wrap-xs">
+    <div class="glass-card checkout-card">
+
+      <span class="urgency-pill"><i class="fa-solid fa-fire"></i> Flash launch price ends when the timer hits zero</span>
+
+      <h2 class="checkout-title">Get the complete vault today</h2>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-hours">00</div>
+          <div class="cd-label">Hours</div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-minutes">00</div>
+          <div class="cd-label">Minutes</div>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-seconds">00</div>
+          <div class="cd-label">Seconds</div>
+        </div>
+      </div>
+
+      <div class="price-row">
+        <span class="price-old">₹1,999</span>
+        <span class="price-new">₹299</span>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- >>> PUT YOUR PAYMENT / CHECKOUT LINK HERE <<< -->
+      <!-- ============================================== -->
+      <a href="https://superprofile.bio/vp/697b844a7132ef00136ff16e" class="btn-primary" style="width: 100%; margin-bottom: 28px;">
+        Get Instant Access Now
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <div class="trust-row">
+        <span><i class="fa-solid fa-shield-halved"></i>100% Safe UPI Payment</span>
+        <span><i class="fa-solid fa-lock"></i>Razorpay / Stripe Secured</span>
+        <span><i class="fa-solid fa-bolt"></i>Instant Delivery</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STICKY MOBILE BOTTOM BAR ================= -->
+<div class="mobile-bar">
+  <div class="mobile-bar-inner">
+    <div>
+      <p class="mobile-price-old">₹1,999</p>
+      <p class="mobile-price-new">₹299</p>
+    </div>
+    <!-- ============================================== -->
+    <!-- >>> PUT YOUR PAYMENT / CHECKOUT LINK HERE <<< -->
+    <!-- ============================================== -->
+    <a href="https://your-payment-link-here.com" class="btn-primary mobile-buy-btn">Buy Now</a>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-row">
+    <p>&copy; <span id="year"></span> AI Prompt Vault. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Terms</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Refund Policy</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <p class="footer-disclaimer">
+    This is a digital product. Results shown from customers are individual experiences and are not guaranteed. AI tool names mentioned (ChatGPT, Midjourney, Claude, Gemini, DeepSeek, Sora, Runway, Kling) are trademarks of their respective owners; this product is not affiliated with or endorsed by them.
+  </p>
+</footer>
+
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Countdown timer - 12 hour rolling window, persisted for the tab session
+  (function () {
+    var STORAGE_KEY = 'apv_countdown_end';
+    var DURATION_MS = 12 * 60 * 60 * 1000;
+
+    var endTime;
+    try {
+      var stored = window.name && window.name.indexOf(STORAGE_KEY) === 0
+        ? parseInt(window.name.split(':')[1], 10)
+        : null;
+      endTime = stored && stored > Date.now() ? stored : null;
+    } catch (e) {
+      endTime = null;
+    }
+
+    if (!endTime) {
+      endTime = Date.now() + DURATION_MS;
+      try { window.name = STORAGE_KEY + ':' + endTime; } catch (e) {}
+    }
+
+    var hoursEl = document.getElementById('cd-hours');
+    var minutesEl = document.getElementById('cd-minutes');
+    var secondsEl = document.getElementById('cd-seconds');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      var remaining = endTime - Date.now();
+      if (remaining <= 0) {
+        endTime = Date.now() + DURATION_MS;
+        try { window.name = STORAGE_KEY + ':' + endTime; } catch (e) {}
+        remaining = DURATION_MS;
+      }
+      var totalSeconds = Math.floor(remaining / 1000);
+      var hours = Math.floor(totalSeconds / 3600);
+      var minutes = Math.floor((totalSeconds % 3600) / 60);
+      var seconds = totalSeconds % 60;
+
+      if (hoursEl) hoursEl.textContent = pad(hours);
+      if (minutesEl) minutesEl.textContent = pad(minutes);
+      if (secondsEl) secondsEl.textContent = pad(seconds);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
